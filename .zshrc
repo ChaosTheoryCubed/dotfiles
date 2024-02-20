@@ -15,9 +15,6 @@ export PATH="$PATH:/mnt/c/Users/oyana/AppData/Local/Programs/Microsoft VS Code/b
 # Starship Prompt
 eval "$(starship init zsh)"
 
-# Node Version Manager (NVM)
-source /usr/share/nvm/init-nvm.sh
-
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -81,9 +78,7 @@ source /usr/share/nvm/init-nvm.sh
 plugins=(
 	git 
 	zsh-autosuggestions 
-	zsh-syntax-highlighting
 	fast-syntax-highlighting
-	zsh-autocomplete
 )
 
 source $ZSH/oh-my-zsh.sh
