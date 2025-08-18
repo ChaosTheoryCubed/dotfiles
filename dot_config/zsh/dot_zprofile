@@ -1,0 +1,21 @@
+# XDG COMPLIANCE
+# -------------------------------------------------------------
+export XDG_CONFIG_HOME="$HOME/.config"     # Where user-specific configurations should be written (analogous to /etc). 
+export XDG_CACHE_HOME="$HOME/.cache"       # Where user-specific non-essential (cached) data should be written (analogous to /var/cache).
+export XDG_DATA_HOME="$HOME/.local/share"  # Where user-specific data files should be written (analogous to /usr/share).
+export XDG_STATE_HOME="$HOME/.local/state" # Where user-specific state files should be written (analogous to /var/lib).
+## XDG System compliance
+export XDG_DATA_DIRS="/usr/local/share:/usr/share" # List of directories separated by : (analogous to PATH).
+export XDG_CONFIG_DIRS="/etc/xdg"                  # List of directories separated by : (analogous to PATH).
+
+# ZInit Package Manager
+# -------------------------------------------------------------
+export ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git" # Main directory for zinit data
+
+# SYSTEM PATH
+# -------------------------------------------------------------
+export PATH=$PATH:/home/chaos/.local/bin # Add local user added bin files to the path
+
+# DEFAULT PROGRAMS
+# -------------------------------------------------------------
+export EDITOR="nvim" # Make neovim the default text editor

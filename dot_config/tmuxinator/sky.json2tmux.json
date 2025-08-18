@@ -1,0 +1,106 @@
+{
+    "Name": "sky",
+    "Directory": "$SKYHOME",
+    "Windows": [
+        {
+            "Name": "MAC"
+        },
+        {
+            "Name": "CODE",
+            "Directory": "$SKYHOME/go-sky",
+            "Pane": {
+                "Command": "vim README.md",
+                "Directory": "$SKYHOME/go-sky"
+            }
+        },
+        {
+            "Name": "APP",
+            "Directory": "$SKYHOME/go-sky",
+            "Pane": {
+                "Command": "make run_air",
+                "Directory": "$SKYHOME/go-sky/cmd/graph-api",
+                "Split": [
+                    {
+                        "SplitType": "vertical",
+                        "Directory": "$SKYHOME/go-sky/cmd/user-api",
+                        "Command": "make run_air",
+                        "Split": [
+                            {
+                                "SplitType": "horizontal",
+                                "Directory": "$SKYHOME/go-sky/cmd/airport-api",
+                                "Command": "make run_air"
+                            },
+                            {
+                                "SplitType": "horizontal",
+                                "Directory": "$SKYHOME/go-sky/cmd/report-api",
+                                "Command": "make run_air"
+                            },
+                            {
+                                "SplitType": "horizontal",
+                                "Directory": "$SKYHOME/go-sky/cmd/trip-api",
+                                "Command": "make run_air"
+                            },
+                            {
+                                "SplitType": "horizontal",
+                                "Directory": "$SKYHOME/go-sky/cmd/contract-api",
+                                "Command": "make run_air"
+                            }
+                        ]
+                    },
+                    {
+                        "SplitType": "horizontal",
+                        "Directory": "$SKYHOME/go-sky/cmd/invoice-api",
+                        "Command": "make run_air"
+                    },
+                    {
+                        "SplitType": "horizontal",
+                        "Directory": "$SKYHOME/go-sky/cmd/trace-api",
+                        "Command": "make run_air"
+                    },
+                    {
+                        "SplitType": "horizontal",
+                        "Directory": "$SKYHOME/go-sky/cmd/manifest-api",
+                        "Command": "make run_air"
+                    },
+                    {
+                        "SplitType": "horizontal",
+                        "Directory": "$SKYHOME/go-sky/cmd/location-api",
+                        "Command": "make run_air"
+                    }
+                ]
+            }
+        },
+        {
+            "Name": "DB",
+            "Directory": "$SKYHOME/go-sky/docker",
+            "Pane": {
+                "Command": "make db && make db-logs",
+                "Split": [
+                    {
+                        "SplitType": "horizontal",
+                        "Directory": "$SKYHOME/go-sky",
+                        "Command": ""
+                    },
+                    {
+                        "SplitType": "vertical",
+                        "Directory": "$SKYHOME/go-sky/cmd/location-api",
+                        "Command": "ctop"
+                    }
+                ]
+            }
+        },
+        {
+            "Name": "SPA",
+            "Directory": "$SKYHOME/portal-spa",
+            "Pane": {
+                "Command": "npm run start",
+                "Split": [
+                    {
+                        "SplitType": "horizontal",
+                        "Command": "vim Makefile"
+                    }
+                ]
+            }
+        }
+    ]
+}

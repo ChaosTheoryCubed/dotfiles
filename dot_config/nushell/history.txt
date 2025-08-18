@@ -1,0 +1,8 @@
+http get http://localhost:3306
+plugin list
+clear
+mysql -u root -h localhost -e "SELECT * FROM trip;" trip | from csv
+mysql
+kubectl get pods
+kubectl get pods | detect column
+kubectl get pods | detect columns

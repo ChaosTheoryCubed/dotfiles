@@ -1,0 +1,21 @@
+[ -f "$XDG_CONFIG_HOME/shell/variables.zsh" ] && source "$XDG_CONFIG_HOME/shell/variables.zsh"
+[ -f "$XDG_CONFIG_HOME/shell/alias.zsh" ] && source "$XDG_CONFIG_HOME/shell/alias.zsh"
+[ -f "$XDG_CONFIG_HOME/shell/functions.zsh" ] && source "$XDG_CONFIG_HOME/shell/functions.zsh"
+[ -f "$XDG_CONFIG_HOME/shell/keybinds.zsh" ] && source "$XDG_CONFIG_HOME/shell/keybinds.zsh"
+
+# Antidote Plugin Manager
+source '/usr/share/zsh-antidote/antidote.zsh'
+antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
+
+fpath=($XDG_CONFIG_HOME/zsh/.zfunc $fpath)
+
+zsh-defer eval "$(oh-my-posh init --config https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/catppuccin_mocha.omp.json zsh)"
+# eval "$(oh-my-posh init zsh --config 'jandedobbeleer')"
+eval "$(/home/chaos/.local/bin/mise activate zsh)"
+eval "$(zoxide init --cmd cd zsh)"
+eval "$(atuin init zsh)"
+
+source <(fzf --zsh)
+
+. "$HOME/.local/bin/env"
+

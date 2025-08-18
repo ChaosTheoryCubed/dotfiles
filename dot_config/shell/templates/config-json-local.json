@@ -1,0 +1,5 @@
+{
+  "env": {},
+  "client-api-url": "http://localhost:8080/graphql",
+  "chat-api-url": "http://localhost:8000"
+}

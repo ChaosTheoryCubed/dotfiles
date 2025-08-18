@@ -1,0 +1,106 @@
+{
+ "Week": "2025-08-16",
+ "LastWeek": "",
+ "X": 0.748813861534418,
+ "Programs": [
+  {
+   "Program": "cmd/asm",
+   "Version": "go1.24.5",
+   "GoVersion": "go1.24.5",
+   "GOOS": "linux",
+   "GOARCH": "amd64",
+   "Counters": {},
+   "Stacks": {}
+  },
+  {
+   "Program": "cmd/cgo",
+   "Version": "go1.24.5",
+   "GoVersion": "go1.24.5",
+   "GOOS": "linux",
+   "GOARCH": "amd64",
+   "Counters": {},
+   "Stacks": {}
+  },
+  {
+   "Program": "cmd/compile",
+   "Version": "go1.24.5",
+   "GoVersion": "go1.24.5",
+   "GOOS": "linux",
+   "GOARCH": "amd64",
+   "Counters": {
+    "compile/invocations": 24
+   },
+   "Stacks": {}
+  },
+  {
+   "Program": "cmd/go",
+   "Version": "go1.24.5",
+   "GoVersion": "go1.24.5",
+   "GOOS": "linux",
+   "GOARCH": "amd64",
+   "Counters": {
+    "go/buildcache/hit": 2640,
+    "go/env/flag:json": 2,
+    "go/goroot:other": 22,
+    "go/install/flag:v": 4,
+    "go/invocations": 22,
+    "go/list/flag:json": 2,
+    "go/list/flag:m": 2,
+    "go/list/flag:versions": 2,
+    "go/mode:module": 22,
+    "go/platform/host/linux/major-version:6": 22,
+    "go/platform/host/linux/version:6-6": 22,
+    "go/platform/target/goamd64:v1": 22,
+    "go/platform/target/goarch:amd64": 22,
+    "go/platform/target/goos:linux": 22,
+    "go/subcommand:env": 2,
+    "go/subcommand:install": 4,
+    "go/subcommand:list": 2,
+    "go/subcommand:version": 14,
+    "go/version/flag:m": 6
+   },
+   "Stacks": {}
+  },
+  {
+   "Program": "golang.org/x/tools/gopls",
+   "Version": "v0.15.3",
+   "GoVersion": "go1.20.14",
+   "GOOS": "linux",
+   "GOARCH": "amd64",
+   "Counters": {
+    "gopls/client:vscode": 6,
+    "gopls/definition/latency:\u003c10ms": 2,
+    "gopls/goversion:1.20": 6,
+    "gopls/hover/latency:\u003c10ms": 8,
+    "gopls/hover/latency:\u003c50ms": 1
+   },
+   "Stacks": {}
+  },
+  {
+   "Program": "cmd/link",
+   "Version": "go1.24.5",
+   "GoVersion": "go1.24.5",
+   "GOOS": "linux",
+   "GOARCH": "amd64",
+   "Counters": {
+    "link/invocations": 4
+   },
+   "Stacks": {}
+  },
+  {
+   "Program": "github.com/golang/vscode-go/vscgo",
+   "Version": "v0.48.0",
+   "GoVersion": "go1.24.4",
+   "GOOS": "linux",
+   "GOARCH": "amd64",
+   "Counters": {
+    "activation_latency:\u003c1000ms": 1,
+    "activation_latency:\u003c500ms": 1,
+    "inc_counters_duration:\u003c10ms": 2,
+    "inc_counters_num_input:\u003c2": 2
+   },
+   "Stacks": {}
+  }
+ ],
+ "Config": "v0.0.0-0"
+}

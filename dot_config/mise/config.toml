@@ -1,0 +1,9 @@
+[tools]
+bun = "latest"
+deno = "latest"
+go = "latest"
+lua-language-server = "latest"
+node = "latest"
+pnpm = "latest"
+rust = "latest"
+stylua = "latest"

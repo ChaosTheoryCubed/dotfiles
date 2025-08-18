@@ -1,0 +1,4 @@
+so-fancy/diff-so-fancy
+romkatv/zsh-defer
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-completions

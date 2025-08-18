@@ -1,0 +1,104 @@
+layout {
+  default_tab_template {
+    // the default zellij tab-bar and status bar plugins
+    pane size=1 borderless=true {
+        plugin location="zellij:tab-bar"
+    }
+    children
+    pane size=2 borderless=true {
+        plugin location="zellij:status-bar"
+    }
+  }
+
+  /* HOME
+  --------------------------------------------------------------------------
+  The home directory of your current user, should be used if you need to
+  use the terminal outside of the work folders
+  --------------------------------------------------------------------------*/
+  tab name="Home" {
+    pane cwd="~"
+  }
+
+  /* DOCKER & DB
+  --------------------------------------------------------------------------
+  Starts the docker containers needed to run SkyPlan locally, also maintains
+  logs, and a ctop view for the container. Finally contains an extra pane
+  for any terminal related tasks needed in this folder, usually for running
+  the streams and buckets
+  --------------------------------------------------------------------------*/
+  tab name="Docker & DB" cwd="$SKYHOME/go-sky/docker" {
+    pane split_direction="vertical" {
+      pane command="bash" {
+        args "-c" "make db && make db-logs"
+      }
+      pane split_direction="horizontal" {
+        pane command="lazydocker"
+        pane
+      }
+    }
+  }
+  
+  /* MICROSERVICES
+  --------------------------------------------------------------------------
+  Starts all of the microservices needed to run the application locally
+  --------------------------------------------------------------------------*/
+  tab name="Microservices" cwd="$SKYHOME/go-sky/cmd" {
+    pane stacked=true {
+      pane name="Graph API" cwd="graph-api" expanded=true command="make" {
+        args "run_air"
+      }
+      pane name="User API" cwd="user-api" command="make" {
+        args "run_air"
+      }
+      pane name="Airport API" cwd="airport-api" command="make" {
+        args "run_air"
+      }
+      pane name="Manifest API" cwd="manifest-api" command="make" {
+        args "run_air"
+      }
+      pane name="Invoice API" cwd="invoice-api" command="make" {
+        args "run_air"
+      }
+      pane name="Trip API" cwd="trip-api" command="make" {
+        args "run_air"
+      }
+      pane name="Trace API" cwd="trace-api" command="make" {
+        args "run_air"
+      }
+      pane name="Report API" cwd="report-api" command="make" {
+        args "run_air"
+      }
+      pane name="Location API" cwd="location-api" command="make" {
+        args "run_air"
+      }
+      pane name="Contract API" cwd="contract-api" command="make" {
+        args "run_air"
+      }
+      pane name="Chat API" cwd="chat-api" command="make" {
+        args "run_air"
+      }
+      pane name="Cache Consumer" cwd="cache-consumer" command="make" {
+        args "run_air"
+      }
+    }
+  }
+
+  /* WORK
+  --------------------------------------------------------------------------
+  This opens up the work directory in neovim, so you can start coding
+  --------------------------------------------------------------------------*/
+  tab name="BE" cwd="$SKYHOME/go-sky/" {
+    pane command="nvim"
+  }
+  
+  /* PORTAL
+  --------------------------------------------------------------------------
+  Sets up and runs the front-end portion of SkyPlan
+  --------------------------------------------------------------------------*/
+  tab name="FE" cwd="$SKYHOME/portal-spa/" {
+    pane start_suspended=true command="zsh" {
+      args "-c" "setup_local_portal"
+    }
+    pane command="nvim"
+  }
+}
