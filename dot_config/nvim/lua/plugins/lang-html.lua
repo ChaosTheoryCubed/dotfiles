@@ -7,14 +7,14 @@ return {
       },
     },
   },
-  -- {
-  --   "mfussenegger/nvim-lint",
-  --   opts = {
-  --     linters_by_ft = {
-  --       html = { "htmlhint" },
-  --     },
-  --   },
-  -- },
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters_by_ft = {
+        html = { "htmlhint" },
+      },
+    },
+  },
   {
     "neovim/nvim-lspconfig",
     opts = {
